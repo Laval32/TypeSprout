@@ -1,0 +1,78 @@
+/* NOTE FOR SELF: Comment each line to avoid misunderstanding */
+
+
+.progress-container { /* main container for progress section */
+    max-width: 1000px; /* limit width */
+    margin: 2rem auto; /* center horizontally with margin */
+    padding: 2rem; /* add inner spacing */
+    display: flex; /* use flexbox for layout */
+    justify-content: space-between; /* space out elements evenly */
+    gap: 1rem; /* space between the left and right columns */
+}
+
+.progress-card { /* individual progress card */
+    background-color: var(--background); /* set background color */
+    border-radius: var(--radius); /* round corners */
+    padding: 1.5rem; /* add inner spacing */
+    margin-bottom: 1.5rem; /* space below card */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* add subtle shadow */
+    width: 48%; /* ensures same size for all cards */
+}
+
+.tree-container { /* container for tree graphic */
+    text-align: center; /* center content */
+    padding: 2rem; /* add spacing */
+}
+
+.tree { /* tree graphic */
+    font-size: 6rem; /* large font size */
+    margin-bottom: 1rem; /* space below tree */
+}
+
+.exp-bar { /* experience bar container */
+    height: 1rem; /* set bar height */
+    background-color: var(--muted); /* set background color */
+    border-radius: var(--radius); /* round edges */
+    overflow: hidden; /* hide overflowing content */
+    margin: 1rem 0; /* add space above and below */
+}
+
+.exp-fill { /* progress fill inside exp bar */
+    height: 100%; /* full height */
+    background-color: var(--primary); /* primary color */
+    transition: width 0.3s ease; /* smooth width transition */
+}
+
+.stats-grid { /* grid layout for stats */
+    display: grid; /* enable grid */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* responsive grid */
+    gap: 1rem; /* space between grid items */
+    margin-top: 2rem; /* space above grid */
+}
+
+.stat-card { /* individual stat box */
+    background-color: var(--muted); /* set background color */
+    padding: 1rem; /* add spacing */
+    border-radius: var(--radius); /* round corners */
+    text-align: center; /* center text */
+}
+
+.stat-value { /* numerical value inside stat box */
+    font-size: 2rem; /* large font size */
+    font-weight: bold; /* make it bold */
+    margin: 0.5rem 0; /* space above and below */
+}
+
+/* new box styles for worst and best keys */
+.side-box { /* container for additional stats */
+    background-color: var(--muted); /* set background color */
+    padding: 1rem; /* add spacing */
+    border-radius: var(--radius); /* round corners */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* subtle shadow */
+    text-align: center; /* center content */
+    width: 100%; /* same width as other stat cards */
+}
+
+.side-box h3 { /* heading inside side box */
+    margin-bottom: 1rem; /* space below heading */
+}

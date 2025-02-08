@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Typing Lesson</title>
+    <link rel="stylesheet" href="lesson.css">
+    <script defer src="personalized.js"></script>
+
+</head>
+<body>
+    
+    <div id="header-container"></div>
+    <script>
+        // Inject header dynamically
+        window.onload = function() {
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading header:', error));
+        };
+    </script>
+
+    <main class="container">
+        <div class="lesson-card">
+            <h1>Personalized Typing Lesson</h1>
+            <h2 class="instruction" style="text-align: center; font-size: large; height: 50px;">This section is tailored to improve your weaker areas!</h2>
+            
+            <div class="typing-area">
+                <p id="text-to-type" class="text-display">Loading...</p>
+                <input type="text" id="typing-input" class="typing-input" autocomplete="off" autofocus>
+                <div class="stats">
+                    <span>Speed (WPM): <span id="wpm">0</span></span>
+                    <span>Accuracy: <span id="accuracy">100</span>%</span>
+                </div>
+                <div class="progress-bar">
+                    <div id="progress" class="progress-fill"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

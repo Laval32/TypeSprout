@@ -1,0 +1,132 @@
+
+/* NOTE FOR SELF: Comment each line to avoid misunderstanding */
+
+:root { /* define global css variables */
+    --background: #f9f9f9; /* light background color */
+    --foreground: #333; /* dark text color */
+    --primary: #4caf50; /* green primary color */
+    --primary-foreground: #fff; /* white text for elements using primary color */
+    --border: #ddd; /* light gray border color */
+    --radius: 0.5rem; /* border radius for rounded corners */
+    --muted: #f0f0f0; /* muted background color for contrast */
+}
+
+body { /* base styles for the whole page */
+    margin: 0; /* remove default margin */
+    font-family: 'Inter', sans-serif; /* set primary font */
+    background-color: var(--background); /* use background color from variables */
+    color: var(--foreground); /* set text color */
+    line-height: 1.6; /* improve text readability */
+}
+
+.header { /* styles for the page header */
+    padding: 1rem; /* add padding inside header */
+    text-align: center; /* center text in the header */
+    background-color: var(--primary); /* use primary color for background */
+    color: var(--primary-foreground); /* set text color for contrast */
+    font-weight: bold; /* make text bold */
+}
+
+.container { /* wrapper for page content */
+    padding: 1rem; /* add padding around content */
+    max-width: 48rem; /* limit max width for readability */
+    margin: 0 auto; /* center container horizontally */
+}
+
+.lesson-card { /* styles for lesson content box */
+    padding: 2rem; /* add space inside card */
+    background: var(--background); /* use background color */
+    border: 1px solid var(--border); /* add a light border */
+    border-radius: var(--radius); /* round the corners */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* add subtle shadow */
+}
+
+.lesson-card h1 { /* styles for lesson titles */
+    font-size: 1.8rem; /* set title font size */
+    margin-bottom: 1.5rem; /* add space below title */
+    text-align: center; /* center the title */
+    color: var(--primary); /* set title color */
+}
+
+.virtual-keyboard { /* container for virtual keyboard */
+    display: flex; /* enable flexbox layout */
+    flex-direction: column; /* stack rows vertically */
+    align-items: center; /* center keyboard horizontally */
+    margin-bottom: 2rem; /* add space below */
+}
+
+.keyboard-row { /* styles for each row of keys */
+    display: flex; /* arrange keys in a row */
+    gap: 0.5rem; /* add space between keys */
+    margin-bottom: 0.5rem; /* add space below row */
+}
+
+.key { /* styles for individual keys */
+    width: 3rem; /* set key width */
+    height: 3rem; /* set key height */
+    border: 1px solid var(--border); /* add a border */
+    border-radius: var(--radius); /* round key corners */
+    background-color: var(--muted); /* use muted color */
+    font-family: 'Courier New', monospace; /* use monospaced font */
+    font-size: 1.1rem; /* set font size */
+    display: flex; /* enable flexbox layout */
+    align-items: center; /* center content vertically */
+    justify-content: center; /* center content horizontally */
+    transition: background-color 0.3s ease, color 0.3s ease; /* smooth color transition */
+}
+
+.key.active { /* styles for active key */
+    background-color: var(--primary); /* change background when active */
+    color: var(--primary-foreground); /* set text color */
+}
+
+.key.colored { /* styles for special keys */
+    background-color: var(--primary); /* use primary color */
+    color: var(--primary-foreground); /* set text color */
+}
+
+.typing-area { /* container for typing input */
+    padding: 1.5rem; /* add padding */
+    background: var(--muted); /* use muted background */
+    border-radius: var(--radius); /* round corners */
+    text-align: center; /* center content */
+}
+
+.text-display { /* area to show typing text */
+    font-family: 'Courier New', monospace; /* use monospaced font */
+    font-size: 1.5rem; /* set text size */
+    margin-bottom: 1.5rem; /* add space below */
+    white-space: pre-wrap; /* preserve line breaks */
+}
+
+.typing-input { /* input field for typing */
+    width: 100%; /* make input full width */
+    padding: 0.75rem; /* add padding */
+    font-family: 'Courier New', monospace; /* use monospaced font */
+    font-size: 1.25rem; /* set font size */
+    border: 2px solid var(--border); /* add border */
+    border-radius: var(--radius); /* round corners */
+    margin-bottom: 1rem; /* add space below */
+}
+
+.stats { /* container for typing stats */
+    display: flex; /* arrange stats side by side */
+    justify-content: space-between; /* spread items evenly */
+    font-size: 0.9rem; /* set font size */
+    margin-bottom: 1rem; /* add space below */
+}
+
+.progress-bar { /* container for progress bar */
+    width: 100%; /* full width */
+    height: 0.5rem; /* set height */
+    background-color: var(--border); /* use border color as background */
+    border-radius: var(--radius); /* round corners */
+    overflow: hidden; /* hide overflow content */
+}
+
+.progress-fill { /* progress indicator */
+    width: 0%; /* start with no progress */
+    height: 100%; /* full height */
+    background-color: var(--primary); /* use primary color */
+    transition: width 0.2s ease; /* smooth width transition */
+}

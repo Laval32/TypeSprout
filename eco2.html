@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy</title>
+    <link rel="stylesheet" href="lesson.css">
+    <script defer src="lesson.js"></script>
+</head>
+<body>
+    
+    <div id="header-container"></div>
+    <script>
+        // Inject header using Five Server
+        window.onload = function() {
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading header:', error));
+        };
+    </script>
+
+    <main class="container">
+        <div class="lesson-card">
+            <h1>Lesson: Energy Efficiency</h1>
+            
+            <div class="virtual-keyboard">
+                <div class="keyboard-row">
+                    <button class="key" data-key="q">q</button>
+                    <button class="key" data-key="w">w</button>
+                    <button class="key" data-key="e">e</button>
+                    <button class="key" data-key="r">r</button>
+                    <button class="key" data-key="t">t</button>
+                    <button class="key" data-key="y">y</button>
+                    <button class="key" data-key="u">u</button>
+                    <button class="key" data-key="i">i</button>
+                    <button class="key" data-key="o">o</button>
+                    <button class="key" data-key="p">p</button>
+                </div>
+                <div class="keyboard-row">
+                    <button class="key" data-key="a">a</button>
+                    <button class="key" data-key="s">s</button>
+                    <button class="key" data-key="d">d</button>
+                    <button class="key" data-key="f">f</button>
+                    <button class="key" data-key="g">g</button>
+                    <button class="key" data-key="h">h</button>
+                    <button class="key" data-key="j">j</button>
+                    <button class="key" data-key="k">k</button>
+                    <button class="key" data-key="l">l</button>
+                    <button class="key" data-key=";">;</button>
+                </div>
+                <div class="keyboard-row">
+                    <button class="key" data-key="z">z</button>
+                    <button class="key" data-key="x">x</button>
+                    <button class="key" data-key="c">c</button>
+                    <button class="key" data-key="v">v</button>
+                    <button class="key" data-key="b">b</button>
+                    <button class="key" data-key="n">n</button>
+                    <button class="key" data-key="m">m</button>
+                </div>
+            </div>
+
+            <div class="typing-area">
+                <p id="text-to-type" class="text-display">asdf jkl; asdf jkl; asdf jkl;</p>
+                <input type="text" id="typing-input" class="typing-input" autocomplete="off" autofocus>
+                <div class="stats">
+                    
+                    <span>Key Per Minute: <span id="wpm"></span></span>
+                    <span>Total Average Accuracy: <span id="accuracy"></span>%</span>
+                    <span>Best Key Per Minute: <span id="bestKPM"></span></span>
+                    
+                </div>
+                <div class="progress-bar">
+                    <div id="progress" class="progress-fill"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

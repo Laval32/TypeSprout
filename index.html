@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeSprout</title>
+    <link rel="stylesheet" href="styles.css"> <!--use google api for font specs-->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml;utf8,🌱" type="image/svg+xml"> <!--if loaded, provides icon-->
+</head>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () { /* loads function for title screen blinking*/
+        const text = "Nurture Your Typing Skills, Reforest the Planet!";
+        const speed = 100; // Speed of typing in ms
+        let index = 0;
+        const h1Element = document.querySelector(".typing-container"); /* selects id where h1 element should be placed */
+    
+        function typeText() {
+            if (index < text.length) {
+                h1Element.textContent += text.charAt(index); //adds character at a time
+                index++; //next
+                setTimeout(typeText, speed); //calls speed after 100 ms
+            } else {
+                h1Element.style.borderRight = "none"; // Remove cursor after typing finishes
+            }
+        }
+    
+        h1Element.textContent = ""; // Clear text before typing
+        typeText(); //calls function for title screen type effect
+    });
+</script>
+
+<body>
+
+    <div id="header-container"></div>
+    <script>
+        // JavaScript to inject the header into the page USE FIVE SERVER
+        window.onload = function() {
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading header:', error));
+        };
+    </script>
+    
+
+    <main class="main">
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="typing-container">Nurture Your Typing Skills, Reforest the Planet!</h1>
+                    <p>Learn to live eco-friendly while learning to touch type. Nurture your virtual plant.</p>
+                    <div class="hero-buttons">
+                        <a href="personalized.html" class="button primary">Start Learning</a>
+                        <a href="progress.html" class="button secondary">View Progress</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="lessons-grid">
+            <div class="container">
+                <h2>Available Lessons</h2>
+                <div class="grid">
+                    <!-- Moved the bottom lessons to the top -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Sustainability Basics</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Learn how small actions help protect the environment.</p>
+                            <div class="card-footer">
+                                <span>Intermediate</span>
+                                <a href="eco1.html" class="button ghost">Start</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Energy Efficiency</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Discover ways to save energy and reduce pollution.</p>
+                            <div class="card-footer">
+                                <span>Intermediate</span>
+                                <a href="eco2.html" class="button ghost">Start</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Recycling</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Understand how recycling saves resources.</p>
+                            <div class="card-footer">
+                                <span>Intermediate</span>
+                                <a href="eco3.html" class="button ghost">Start</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Eco-Transport</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Explore greener, eco-friendly travel.</p>
+                            <div class="card-footer">
+                                <span>Intermediate</span>
+                                <a href="eco4.html" class="button ghost">Start</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Moved the top lessons to the bottom -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Home Row Basics</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Learn the foundation keys: ASDF JKL</p>
+                            <div class="card-footer">
+                                <span>Beginner</span>
+                                <a href="home-row.html" class="button ghost">Start</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Top Row Keys</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Master QWERTY and nearby keys</p>
+                            <div class="card-footer">
+                                <span>Intermediate</span>
+                                <a href="top-row.html" class="button ghost">Start</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Bottom Row Keys</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Practice with the bottom row, ZXCVBNM</p>
+                            <div class="card-footer">
+                                <span>Intermediate</span>
+                                <a href="bottom-row.html" class="button ghost">Start</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Numbers & Symbols</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Learn numbers and special characters</p>
+                            <div class="card-footer">
+                                <span>Advanced</span>
+                                <a href="number-row.html" class="button ghost">Start</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

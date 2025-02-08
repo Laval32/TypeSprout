@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="profileStyles.css">
+    
+
+</head>
+
+<body>
+    <div id="header-container"></div>
+    <script>
+        // Inject header using Five Server
+        window.onload = function() {
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading header:', error));
+        };
+    </script>
+
+    <main class="profile-container">
+        <!-- Profile Hero Section -->
+        <section class="profile-hero">
+            <div class="container">
+                <div class="profile-content">
+                    <h1>Welcome!</h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profile Info Section -->
+        <section class="profile-info">
+            <div class="container">
+                <h2>Your Typing Information</h2>
+                <div class="profile-stats">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Best Speed</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Your best typing speed is <span id="bestKPM"></span> Keys per Minute!</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Login Streak</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>You have a streak of <span id="streak"></span> days!</p>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="stats.js"></script>
+</body>
+</html>

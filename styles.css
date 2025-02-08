@@ -1,0 +1,259 @@
+:root {
+    --background: #ffffff;
+    --foreground: #020817;
+    --muted: #f1f5f9;
+    --muted-foreground: #64748b;
+    --border: #e2e8f0;
+    --primary: #0f172a;
+    --primary-foreground: #ffffff;
+    --radius: 0.5rem;
+}
+
+.dark {
+    --background: #020817;
+    --foreground: #ffffff;
+    --muted: #1e293b;
+    --muted-foreground: #94a3b8;
+    --border: #1e293b;
+    --primary: #ffffff;
+    --primary-foreground: #020817;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background);
+    color: var(--foreground);
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Header */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 1px solid var(--border);
+    background-color: var(--background);
+    backdrop-filter: blur(10px);
+}
+
+.header-container {
+    display: flex;
+    height: 3.5rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--foreground);
+}
+
+.main-nav {
+    display: none;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .main-nav {
+        display: flex;
+    }
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--muted-foreground);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.nav-link.active {
+    color: var(--foreground);
+}
+
+.icon {
+    width: 1rem;
+    height: 1rem;
+}
+
+.theme-toggle {
+    padding: 0.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--foreground);
+}
+
+/* Hero Section */
+.hero {
+    padding: 2 rem 0;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 2.25 rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+    .hero h1 {
+        font-size: 2.7rem;
+    }
+}
+
+.hero p {
+    color: var(--muted-foreground);
+    margin-bottom: 2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Buttons */
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.button.primary {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+}
+
+.button.secondary {
+    background-color: var(--muted);
+    color: var(--foreground);
+}
+
+.button.ghost {
+    background: none;
+    color: var(--foreground);
+}
+
+/* Grid and Cards */
+.lessons-grid {
+    padding: 3rem 0;
+    background-color: var(--muted);
+}
+
+.lessons-grid h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.875rem;
+    font-weight: 700;
+}
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.card {
+    background-color: var(--background);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.card-header h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content p {
+    color: var(--muted-foreground);
+    margin-bottom: 1rem;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-footer span {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+
+/*TITLE */
+
+
+.typing-container {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 1.2 rem; /* Slightly smaller text */
+    font-weight: 600;
+    font-family: "Inter", sans-serif;
+    border-right: 2px solid #000; /* Cursor effect */
+    text-align: center;
+}
+
+/* Center the hero content */
+.hero-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh; /* Adjust height for centering */
+}
+

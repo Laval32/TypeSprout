@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="progressStyles.css">
+
+</head>
+<body>
+
+    <div id="header-container"></div>
+    <script>
+        // Inject header using Five Server
+        window.onload = function() {
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading header:', error));
+        };
+    </script>
+
+    <main class="progress-container">
+        <!-- Left Column -->
+        <div class="progress-card">
+            <div class="tree-container">
+                <div class="tree" id="tree-emoji">ADDS TREE EMOJI HERE</div>
+                <h2>Level <span id="level"></span></h2>
+                <div class="exp-bar">
+                    <div class="exp-fill" id="exp-fill"></div>
+                </div>
+                <p style="font-size: x-large;">
+                    <span style id="current-exp"><span id="exp"></span></span> / <span id="exp-needed">50</span> XP
+                </p>
+            </div>
+        </div>
+
+        <!-- Right Column with Stats -->
+        <div class="progress-card">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Average Accuracy</h3>
+                    <div class="stat-value" id="avg-accuracy"><span id="accuracy"></span>%</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Lessons Completed</h3>
+                    <div class="stat-value" id="lessons-completed"><span id="lessons"></span></div>
+                </div>
+                <div class="stat-card">
+                    <h3>Worst Key</h3>
+                    <div class="stat-value" id="worst-keys"><span id="worstKey"></span></span></div>
+                </div>
+                <div class="stat-card">
+                    <h3>Best Key</h3>
+                    <div class="stat-value" id="best-keys"><span id="bestKey"></span></div>
+                </div>
+            </div>
+        </div>
+
+        
+    </main>
+
+    
+    <script src="stats.js"></script>
+</body>
+</html>

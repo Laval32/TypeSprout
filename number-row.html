@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbers & Special Characters</title>
+    <link rel="stylesheet" href="lesson.css">
+    <script defer src="lesson.js"></script>
+</head>
+<body>
+    <div id="header-container"></div>
+    <main class="container">
+        <div class="lesson-card">
+            <h1>Lesson: Numbers & Special Characters</h1>
+            <div class="virtual-keyboard">
+                <div class="keyboard-row">
+                    <button class="key colored" data-key="1">1</button>
+                    <button class="key colored" data-key="2">2</button>
+                    <button class="key colored" data-key="3">3</button>
+                    <button class="key colored" data-key="4">4</button>
+                    <button class="key colored" data-key="5">5</button>
+                    <button class="key colored" data-key="6">6</button>
+                    <button class="key colored" data-key="7">7</button>
+                    <button class="key colored" data-key="8">8</button>
+                    <button class="key colored" data-key="9">9</button>
+                    <button class="key colored" data-key="0">0</button>
+                </div>
+                <div class="keyboard-row">
+                    <button class="key colored" data-key="!">!</button>
+                    <button class="key colored" data-key="@">@</button>
+                    <button class="key colored" data-key="#">#</button>
+                    <button class="key colored" data-key="$">$</button>
+                    <button class="key colored" data-key="%">%</button>
+                    <button class="key colored" data-key="^">^</button>
+                    <button class="key colored" data-key="&">&</button>
+                    <button class="key colored" data-key="*">*</button>
+                    <button class="key colored" data-key="(">(</button>
+                    <button class="key colored" data-key=")">)</button>
+                </div>
+            </div>
+
+            <div class="typing-area">
+                <p id="text-to-type" class="text-display"></p>
+                <input type="text" id="typing-input" class="typing-input" autocomplete="off" autofocus>
+                <div class="stats">
+                    <span>Key Per Minute: <span id="wpm"></span></span>
+                    <span>Total Average Accuracy: <span id="accuracy"></span>%</span>
+                    <span>Best Key Per Minute: <span id="bestKPM"></span></span>
+                </div>
+                <div class="progress-bar">
+                    <div id="progress" class="progress-fill"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
